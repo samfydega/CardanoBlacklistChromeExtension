@@ -2,7 +2,7 @@
 
 // Firebase Import Statement + Configuration
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-import { getFirestore, getDoc, doc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+import { getFirestore, getDoc, doc, getDocs, collection } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
 // Revealable
 const firebaseConfig = {
@@ -52,13 +52,14 @@ async function transactionsPrevented() {
 }
 
 // Dynamically returning size of blacklist length (local JSON)
-function BLLength() {
-    fetch("../wallets.json")
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            let number = data.wallets.length;
+async function BLLength() {
+
+    getDocs(collection(db, "blacklistedwallets"))
+        .then(querySnapshot => {
+      
+            let count = querySnapshot.query._path.segments.length;
             let walletEl = document.getElementById("walletsBlacklistedOnChain");
-            walletEl.textContent = number;
-        })
+            walletEl.textContent = count;
+   
+    });
 }

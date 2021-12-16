@@ -131,12 +131,12 @@ async function finalizeCheck(result, object) {
 
         // Updating Check Count
         await getDoc(doc(db, "walletchecks", "XJC3BE4qnNlBDCxtJKLs")).then(docSnap => {
-        if (docSnap.exists()) {
-            checks = docSnap.data().numberofchecks;
+            if (docSnap.exists()) {
+                checks = docSnap.data().numberofchecks;
+                checks += 1;
+            } else {
             checks += 1;
-        } else {
-          checks += 1;
-        }
+            }
         });
 
         const docRef = doc(db, 'walletchecks', 'XJC3BE4qnNlBDCxtJKLs');
