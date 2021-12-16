@@ -1,0 +1,52 @@
+<!-- Submit Wallet Page HTML for Cardano Blacklist Chrome/Brave Extension-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Check Wallet</title>
+
+    <!-- Fonts -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Lato:wght@300;400&display=swap');
+    </style>
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="submit.css">
+
+</head>
+
+<!-- Body Text -->
+<body>
+
+    <!-- Title Image and Text -->
+    <a href="home.html">  <img class="backIcon" src="https://cdn-icons-png.flaticon.com/512/545/545680.png"> </a>
+    <h1>Submit Address for Review</h1>
+
+    <!-- Process Inputs and Responses -->
+    <div class="centerAlign">
+
+        <input class="formInputText" placeholder="Wallet Address (0x0)" id="walletAddressInput"> <br>
+        <input class="formInputText" placeholder="Description/Reason" id="walletDescriptionInput"> <br>
+        <input class="formInputText" placeholder="Link (Optional)" id="walletLinkInput"> <br>
+        <input class="formInputText" placeholder="Contact Info (Optional)" id="walletContactInput">
+        <br>
+        <button type="button" class="button" id="btnsubmit"> <span class="button__text"> Submit </span> </button>
+        <p id="responseMessage" class="responseMessageStyling"></p>
+        
+        <div class="successMessageStyling">
+            <p id="successMessage"></p>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="./background.js" type="text/javascript"></script>
+    <script src="./content.js" type="text/javascript"></script>
+    <script src="./submit.js"  type="module"> </script>
+
+</body>
+</html>

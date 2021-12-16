@@ -1,0 +1,75 @@
+<!-- Landing Page HTML for Cardano Blacklist Chrome/Brave Extension-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cardano Blacklist Chrome Extension</title>
+
+    <!-- Fonts -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Lato:wght@300;400&display=swap');
+    </style>
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+
+<!-- Body Tag -->
+<body id="bodyLoad">
+
+<!-- Title Image and Text -->
+<img src="../images/128.png" class="checkimagestyling">
+<h1>Cardano Blacklist</h1>
+<p class="h2e">Semper Reprehendo Bis</h2>
+
+<!-- Navigation Buttons-->
+<div class="buttonStyling">
+
+    <!-- Check Address Navigation Button -->
+    <a href="check.html">
+        <button type="button" class="button">
+            <span class="button__text"> Check Address </span>
+        </button>
+    </a>
+
+    <!-- Submit Address for Review Navigation Button-->
+    <a href="submit.html">
+        <button type="button" class="button button2">
+            <span class="button__text"> Submit Scam </span>
+        </button>
+    </a>
+
+</div>
+
+<!-- Transactions Checked Load -->
+<p class="transactionsChecked">
+    <span id="walletsCheckedOverall"></span>
+    transactions checked.
+</p>
+
+<!-- Scams Prevented Load -->
+<p class="scamsPrevented">
+    <span id="walletsReturnedAsBlacklisted"> </span>
+    transactions prevented.
+</p>
+
+<!-- Wallets Blacklisted Load -->
+<p class="walletsReceived">
+    <span id="walletsBlacklistedOnChain"> </span>
+    wallets blacklisted.
+</p>
+
+
+<!-- Vanilla JS scripts for landing page, check wallet, and submit wallet-->
+<script src="background.js" type="text/javascript"></script>
+<script src="content.js" type="text/javascript"></script>
+<script src="home.js"  type="module"></script>
+
+</body>
+</html>
